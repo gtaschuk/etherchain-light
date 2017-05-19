@@ -20,6 +20,12 @@ services:
     entrypoint: ''
     ports:
       - "8545:8545"
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    links:
+      - etherchain
 volumes:
   parity-data-volume:
   parity-ipc-socket:
